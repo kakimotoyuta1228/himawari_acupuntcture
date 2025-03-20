@@ -215,6 +215,15 @@ h2 {
     min-width: 300px;
 }
 
+.doctor-info ul {
+    margin-left: 20px; /* リストマーカーが親要素のパディング内に収まるように */
+    padding-left: 20px; /* リスト内容を調整 */
+}
+
+.doctor-info li {
+    margin-bottom: 10px;
+}
+
 .doctor-name {
     font-size: 20px;
     font-weight: bold;
@@ -270,8 +279,9 @@ h2 {
     margin-bottom: 15px;
 }
 
-.first-visit-info ul {
-    margin-left: 20px;
+.first-visit-info ul, .first-visit-info ol {
+    margin-left: 20px; /* リストマーカーがパディング内に収まるように */
+    padding-left: 20px; /* リスト内容を調整 */
 }
 
 .first-visit-info li {
@@ -295,6 +305,11 @@ h2 {
 .access-details {
     flex: 1;
     min-width: 300px;
+}
+
+.access-details ul {
+    margin-left: 20px; /* リストマーカーがパディング内に収まるように */
+    padding-left: 20px; /* リスト内容を調整 */
 }
 
 /* フッター */
@@ -353,8 +368,8 @@ footer {
         display: block;
         position: absolute;
         right: 30px; /* 右端からの距離：数字を大きくすれば右に寄る、小さくすれば左に寄る */
-        /* top: 0%; /* ヘッダーの中央に配置：数字を大きくすれば下に寄る、小さくすれば上に寄る */
-        transform: translateY(-160%);
+        top: 50%; /* ヘッダーの中央に配置：数字を大きくすれば下に寄る、小さくすれば上に寄る */
+        transform: translateY(-50%);
         z-index: 110;
         background-color: transparent;
         border-radius: 0;
@@ -374,6 +389,7 @@ footer {
 
     nav {
         border-bottom: none;
+        margin-bottom: 0;
     }
 
     .nav-list {
@@ -473,12 +489,8 @@ footer {
 
     /* 医師紹介 */
     .doctor-info ul {
-        margin-left: 15px; /* リストマーカーが親要素のパディング内に収まるように */
-        padding-left: 15px; /* リスト内容を調整 */
-    }
-
-    .doctor-info li {
-        margin-bottom: 10px;
+        margin-left: 15px; /* モバイルで調整 */
+        padding-left: 15px;
     }
 
     /* 初診の方へ */
