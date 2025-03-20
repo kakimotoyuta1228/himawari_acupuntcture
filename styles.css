@@ -14,7 +14,7 @@ body {
 
 /* ヘッダー */
 header {
-    background-color: #003366; /* 紺色 */
+    background-color: #003366;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -32,6 +32,10 @@ header {
 .logo {
     font-size: 24px;
     font-weight: bold;
+}
+
+.contact-info {
+    font-size: 16px;
 }
 
 /* ナビゲーション */
@@ -58,7 +62,7 @@ nav {
 
 .nav-list a {
     text-decoration: none;
-    color: #003366; /* 紺色 */
+    color: #003366;
     font-weight: bold;
     padding: 10px 15px;
     transition: background-color 0.3s;
@@ -177,10 +181,10 @@ section {
 }
 
 h2 {
-    color: #003366; /* 紺色 */
+    color: #003366;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #003366; /* 紺色 */
+    border-bottom: 2px solid #003366;
 }
 
 /* 医師紹介 */
@@ -194,10 +198,16 @@ h2 {
 .doctor-image {
     flex: 0 0 200px;
     background-color: #f0f0f0;
-    height: 240px; /* 画像のプレースホルダー */
+    height: 240px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.doctor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .doctor-info {
@@ -209,7 +219,7 @@ h2 {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #003366; /* 紺色 */
+    color: #003366;
 }
 
 /* お知らせ */
@@ -223,7 +233,7 @@ h2 {
 }
 
 .news-date {
-    color: #003366; /* 紺色 */
+    color: #003366;
     margin-right: 10px;
     font-weight: bold;
 }
@@ -244,7 +254,7 @@ h2 {
     background-color: #f0f5fa;
     text-align: left;
     width: 30%;
-    color: #003366; /* 紺色 */
+    color: #003366;
 }
 
 /* 初診の方へ */
@@ -256,7 +266,7 @@ h2 {
 }
 
 .first-visit-info h3 {
-    color: #003366; /* 紺色 */
+    color: #003366;
     margin-bottom: 15px;
 }
 
@@ -279,7 +289,7 @@ h2 {
 .map {
     flex: 1;
     min-width: 300px;
-    height: 400px; /* マップのプレースホルダー */
+    height: 400px;
 }
 
 .access-details {
@@ -289,7 +299,7 @@ h2 {
 
 /* フッター */
 footer {
-    background-color: #003366; /* 紺色 */
+    background-color: #003366;
     color: white;
     text-align: center;
     padding: 30px 0;
@@ -322,23 +332,50 @@ footer {
 
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
+    /* ヘッダー */
     .header-container {
         flex-direction: column;
         text-align: center;
+        gap: 10px;
     }
-    
+
     .logo {
-        margin-bottom: 10px;
+        margin-bottom: 0;
     }
-    
+
+    .contact-info {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* ハンバーガーメニュー */
     .hamburger {
         display: block;
         position: absolute;
-        right: 20px;
-        top: 10px;
-        z-index: 20;
+        right: 30px; /* 右端からの距離：数字を大きくすれば右に寄る、小さくすれば左に寄る */
+        /* top: 0%; /* ヘッダーの中央に配置：数字を大きくすれば下に寄る、小さくすれば上に寄る */
+        transform: translateY(-160%);
+        z-index: 110;
+        background-color: transparent;
+        border-radius: 0;
+        padding: 10px; /* タッチエリア：数字を大きくすればタッチエリアが拡大 */
     }
-    
+
+    .hamburger span {
+        background-color: white;
+        width: 40px; /* 線の幅：数字を大きくすれば線が長くなる、小さくすれば短くなる */
+        height: 3px; /* 線の太さ：数字を大きくすれば太くなる、小さくすれば細くなる */
+        margin: 6px auto; /* 線の間隔：数字を大きくすれば間隔が広がる、小さくすれば狭まる */
+    }
+
+    .nav-container {
+        background-color: transparent;
+    }
+
+    nav {
+        border-bottom: none;
+    }
+
     .nav-list {
         display: none;
         flex-direction: column;
@@ -351,48 +388,142 @@ footer {
         z-index: 10;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    
+
     .nav-list.active {
         display: flex;
     }
-    
+
     .nav-list li {
         width: 100%;
         border-bottom: 1px solid #e7e7e7;
-        padding: 10px 0;
+        padding: 15px 0;
     }
-    
+
     .nav-list li:last-child {
         border-bottom: none;
     }
-    
-    .hamburger.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
+
+    .nav-list a {
+        display: block;
+        padding: 15px;
+        font-size: 16px;
     }
-    
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
-    
+
     .hamburger.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-9px) rotate(-45deg);
     }
-    
+
+    /* スライドショー */
+    .slideshow-container {
+        max-height: 300px;
+        margin-top: 0;
+        border-top: none;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        position: relative;
+    }
+
+    .slide {
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .prev, .next {
+        font-size: 16px;
+        padding: 10px;
+        margin-top: -20px;
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+    }
+
+    /* セクション */
     .doctor-profile, .access-info {
         flex-direction: column;
+        gap: 20px;
     }
-    
+
     .doctor-image, .map {
         width: 100%;
         margin-bottom: 20px;
     }
-    
-    .slideshow-container {
-        height: 300px;
+
+    .doctor-image {
+        width: 80%;
+        height: 80%;
+        margin: 0 auto;
     }
-    
-    .slide {
-        height: 300px;
+
+    .doctor-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* 医師紹介 */
+    .doctor-info ul {
+        margin-left: 15px; /* リストマーカーが親要素のパディング内に収まるように */
+        padding-left: 15px; /* リスト内容を調整 */
+    }
+
+    .doctor-info li {
+        margin-bottom: 10px;
+    }
+
+    /* 初診の方へ */
+    .first-visit-info {
+        padding: 15px;
+    }
+
+    .first-visit-info ul, .first-visit-info ol {
+        margin-left: 15px;
+        padding-left: 15px;
+    }
+
+    .first-visit-info li {
+        margin-bottom: 10px;
+    }
+
+    /* アクセス */
+    .access-details ul {
+        margin-left: 15px;
+        padding-left: 15px;
+    }
+
+    /* フッター */
+    footer {
+        padding: 20px 0;
+    }
+
+    .footer-info {
+        margin-bottom: 15px;
+        line-height: 1.6;
+        font-size: 14px;
+    }
+
+    .footer-info p {
+        margin-bottom: 5px;
+    }
+
+    .footer-links {
+        display: none;
+    }
+
+    footer p:last-child {
+        margin-top: 15px;
+        font-size: 12px;
+        opacity: 0.8;
     }
 }
 
@@ -400,103 +531,72 @@ footer {
     h2 {
         font-size: 20px;
     }
-    
+
     .slideshow-container {
-        height: 200px;
+        max-height: 200px;
     }
-    
+
     .slide {
         height: 200px;
+        object-fit: cover;
+        object-position: center;
     }
-    
+
+    .prev, .next {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .dot {
+        height: 8px;
+        width: 8px;
+    }
+
     .clinic-info th, .clinic-info td {
         padding: 8px;
         font-size: 14px;
     }
-    
+
     .doctor-name {
         font-size: 18px;
     }
-    
-    .footer-links a {
-        display: block;
-        margin: 5px 0;
+
+    .doctor-info p, .doctor-info li {
+        font-size: 14px;
+    }
+
+    .doctor-info ul {
+        margin-left: 10px; /* 小さい画面でさらに調整 */
+        padding-left: 10px;
+    }
+
+    .first-visit-info {
+        padding: 15px;
+    }
+
+    .first-visit-info h3 {
+        font-size: 16px;
+    }
+
+    .first-visit-info p, .first-visit-info li {
+        font-size: 14px;
+    }
+
+    .first-visit-info ul, .first-visit-info ol {
+        margin-left: 10px;
+        padding-left: 10px;
+    }
+
+    .access-details h3 {
+        font-size: 16px;
+    }
+
+    .access-details p, .access-details li {
+        font-size: 14px;
+    }
+
+    .access-details ul {
+        margin-left: 10px;
+        padding-left: 10px;
     }
 }
-
-/* ヘッダーの修正 */
-@media (max-width: 768px) {
-    /* ヘッダー全体のスタイリング */
-    header {
-      position: relative;
-      z-index: 100; /* 他の要素より前面に表示 */
-      border-bottom: none; /* ヘッダー下部の線を削除 */
-    }
-    
-    /* ハンバーガーメニューボタンの位置調整 */
-    .hamburger {
-      position: absolute;
-      right: 15px;
-      top: 50%; /* ヘッダーの中央に配置 */
-      transform: translateY(-50%);
-      z-index: 110; /* ヘッダーよりも前面に表示 */
-      background-color: rgba(255, 255, 255, 0.8); /* 白背景に透明度を設定 */
-      border-radius: 3px;
-      padding: 8px;
-    }
-    
-    /* ハンバーガーメニューのバーの色を調整（視認性向上） */
-    .hamburger span {
-      background-color: #003366;
-      height: 2px;
-      margin: 4px auto;
-    }
-  
-    /* スライドショーコンテナの調整 */
-    .slideshow-container {
-      margin-top: 0; /* ヘッダーとの間隔をなくす */
-      border-top: none; /* 上部の境界線を削除 */
-    }
-  
-    /* フッターのスタイリング改善 */
-    footer {
-      padding: 20px 0;
-      text-align: center;
-    }
-    
-    /* フッター内の情報を整理 */
-    .footer-info {
-      margin-bottom: 15px;
-      line-height: 1.6;
-    }
-    
-    .footer-info p {
-      margin-bottom: 5px;
-    }
-    
-    /* フッターリンクの表示改善 */
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 15px 0;
-    }
-    
-    .footer-links a {
-      margin: 5px 0;
-      padding: 5px 0;
-      width: 80%;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .footer-links a:last-child {
-      border-bottom: none;
-    }
-    
-    /* 著作権表示 */
-    footer p:last-child {
-      margin-top: 15px;
-      font-size: 12px;
-      opacity: 0.8;
-    }
-  }
