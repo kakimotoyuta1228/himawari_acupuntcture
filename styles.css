@@ -423,3 +423,80 @@ footer {
         margin: 5px 0;
     }
 }
+
+/* ヘッダーの修正 */
+@media (max-width: 768px) {
+    /* ヘッダー全体のスタイリング */
+    header {
+      position: relative;
+      z-index: 100; /* 他の要素より前面に表示 */
+      border-bottom: none; /* ヘッダー下部の線を削除 */
+    }
+    
+    /* ハンバーガーメニューボタンの位置調整 */
+    .hamburger {
+      position: absolute;
+      right: 15px;
+      top: 50%; /* ヘッダーの中央に配置 */
+      transform: translateY(-50%);
+      z-index: 110; /* ヘッダーよりも前面に表示 */
+      background-color: rgba(255, 255, 255, 0.8); /* 白背景に透明度を設定 */
+      border-radius: 3px;
+      padding: 8px;
+    }
+    
+    /* ハンバーガーメニューのバーの色を調整（視認性向上） */
+    .hamburger span {
+      background-color: #003366;
+      height: 2px;
+      margin: 4px auto;
+    }
+  
+    /* スライドショーコンテナの調整 */
+    .slideshow-container {
+      margin-top: 0; /* ヘッダーとの間隔をなくす */
+      border-top: none; /* 上部の境界線を削除 */
+    }
+  
+    /* フッターのスタイリング改善 */
+    footer {
+      padding: 20px 0;
+      text-align: center;
+    }
+    
+    /* フッター内の情報を整理 */
+    .footer-info {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    
+    .footer-info p {
+      margin-bottom: 5px;
+    }
+    
+    /* フッターリンクの表示改善 */
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 15px 0;
+    }
+    
+    .footer-links a {
+      margin: 5px 0;
+      padding: 5px 0;
+      width: 80%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-links a:last-child {
+      border-bottom: none;
+    }
+    
+    /* 著作権表示 */
+    footer p:last-child {
+      margin-top: 15px;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+  }
