@@ -368,8 +368,7 @@ footer {
         display: block;
         position: absolute;
         right: 30px; /* 右端からの距離：数字を大きくすれば右に寄る、小さくすれば左に寄る */
-        top: 50%; /* ヘッダーの中央に配置：数字を大きくすれば下に寄る、小さくすれば上に寄る */
-        transform: translateY(-50%);
+        transform: translateY(-160%);
         z-index: 110;
         background-color: transparent;
         border-radius: 0;
