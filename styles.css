@@ -34,8 +34,18 @@ header {
     font-weight: bold;
 }
 
-.contact-info {
-    font-size: 16px;
+
+.phone-link {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.phone-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
 }
 
 /* ナビゲーション */
@@ -358,16 +368,20 @@ footer {
         margin-bottom: 0;
     }
 
-    .contact-info {
-        font-size: 14px;
-        text-align: center;
+ 
+
+    .phone-link {
+        display: inline-block;
+        padding: 1px 0;
+        font-size: 16px;
+
     }
 
     /* ハンバーガーメニュー */
     .hamburger {
         display: block;
         position: absolute;
-        right: 30px; /* 右端からの距離：数字を大きくすれば右に寄る、小さくすれば左に寄る */
+        right: 15px; /* 右端からの距離：数字を大きくすれば左に寄る、小さくすれ右に寄る */
         transform: translateY(-160%);
         z-index: 110;
         background-color: transparent;
